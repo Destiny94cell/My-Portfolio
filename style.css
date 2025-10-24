@@ -1,0 +1,671 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2rem;
+  padding-left: 10rem;
+}
+
+.Main-Container {
+  width: 600%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  padding-right: 5rem;
+  font-family: "Outfit";
+}
+
+.Name {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Montserrat";
+}
+
+.nav-link i {
+  display: none;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 40px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 5rem;
+  position: sticky;
+  top: 0;
+}
+
+.Nav-links a {
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.Profile-Container {
+  display: flex;
+  gap: 15rem;
+  align-items: center;
+  padding: 80px 30px;
+}
+
+.Profile-image img {
+  width: 180%;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.Bio {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.greeting {
+  font-size: 25px;
+  font-weight: 400;
+  color: gray;
+}
+
+.Bio h1 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Outfit";
+  margin-top: 1rem;
+}
+
+.Bio h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: rgb(78, 78, 78);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-outline {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid black;
+  color: black;
+  margin-top: 1rem;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-filled {
+  padding: 12px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.Icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Icons i {
+  font-size: 40px;
+  color: black;
+  gap: 2rem;
+}
+
+.AboutMe-section {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.AboutMe-section small {
+  font-size: 20px;
+  color: rgb(85, 84, 84);
+}
+
+.AboutMe-section h1 {
+  font-size: 50px;
+  margin-top: 5px;
+  margin-bottom: 5rem;
+}
+
+.About-Cotainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.About-Cotainer img {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+}
+
+.AboutMe-ExperienceContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.AboutMe-ExperienceContainer p {
+  width: 100%;
+  padding-left: 2rem;
+  font-size: 15px;
+  color: rgb(104, 103, 103);
+}
+
+.Webdev-Container {
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+}
+
+.WebDev-Section {
+  width: 45%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid rgb(53, 52, 52);
+}
+
+.WebDev-Section i {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.WebDev-Section h3 {
+  font-size: 30px;
+  margin-bottom: 2px;
+}
+
+.WebDev-Section h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(104, 103, 103);
+}
+
+.GrapicsDesign-Section {
+  width: 45%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid rgb(53, 52, 52);
+}
+
+.GrapicsDesign-Section i {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.GrapicsDesign-Section h3 {
+  font-size: 30px;
+  margin-bottom: 2px;
+}
+
+.GrapicsDesign-Section h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(104, 103, 103);
+}
+
+.Experience-Section {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+.Experience-Section small {
+  font-size: 20px;
+  color: rgb(85, 84, 84);
+}
+
+.Experience-Section h1 {
+  font-size: 50px;
+  margin-top: 5px;
+  margin-bottom: 5rem;
+}
+
+.ExperienceSection-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.WebDev-Experience {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.5rem;
+  border: 1px solid rgb(53, 52, 52);
+  border-radius: 2rem;
+  margin-bottom: 5rem;
+}
+
+.WebDev-Experience h2 {
+  font-size: 35px;
+  margin-bottom: 2rem;
+}
+
+.Experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Html {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Experience i {
+  font-size: 30px;
+}
+
+.Experience p {
+  color: rgb(104, 103, 103);
+  margin-top: 4px;
+}
+
+.Graphics-Experience {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.5rem;
+  border: 1px solid rgb(53, 52, 52);
+  border-radius: 2rem;
+  margin-bottom: 5rem;
+}
+
+.Graphics-Experience h2 {
+  font-size: 35px;
+  margin-bottom: 2rem;
+}
+
+.Project-Section {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+.Project-Section small {
+  font-size: 15px;
+}
+
+.Project-Section h1 {
+  font-size: 50px;
+}
+
+.Project-Container-one {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.Project-one {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: rgb(247, 247, 247);
+}
+
+.Project-one img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1rem;
+}
+
+.Project-one h2 {
+  font-size: 30px;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.Project-one a {
+  text-decoration: none;
+  color: black;
+}
+
+.github {
+  font-size: 15px;
+  padding: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+.demo {
+  font-size: 15px;
+  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+.github:hover {
+  background-color: rgb(43, 42, 42);
+  color: white;
+  transition: 0s;
+  border: 0;
+  cursor: pointer;
+}
+
+.demo:hover {
+  background-color: rgb(43, 42, 42);
+  color: white;
+  transition: 0s;
+  border: 0;
+  cursor: pointer;
+}
+
+.Project-Container-two {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 10rem;
+}
+
+.Contact-Section {
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.Contact-Section small {
+  font-size: 15px;
+}
+
+.Contact-Section h1 {
+  font-size: 50px;
+}
+
+.Contact-Container {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 2px solid rgb(155, 154, 154);
+  border-radius: 2rem;
+}
+
+.Contact-Container i {
+  font-size: 30px;
+}
+
+.Contact-Container h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.Contact-Container h4:hover {
+  color: rgb(104, 103, 103);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Nav-links-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  margin-top: 10rem;
+}
+
+.Nav-links-bottom a {
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+}
+
+.Copyright-reserved {
+  font-size: 15px;
+  margin-bottom: 10rem;
+  color: rgb(104, 103, 103);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Design Code */
+
+@media (max-width: 400px) {
+  .Main-Container {
+    align-items: center;
+    width: 200%;
+  }
+
+  .Name {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Montserrat";
+  }
+
+  .Name i {
+    display: flex;
+  }
+
+  
+  .nav-link i {
+    display: flex;
+  }
+
+  .Nav-links {
+    display: none;
+  }
+
+  .Profile-Container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .Profile-image img {
+    width: 100%;
+  }
+
+  .Bio {
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  .btn-outline {
+    padding: 20px;
+    border-radius: 35px;
+  }
+
+  .btn-filled {
+    padding: 25px;
+    border-radius: 35px;
+  }
+
+  .About-Cotainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .About-Cotainer img {
+    width: 60%;
+  }
+
+  .AboutMe-section h1 {
+    font-size: 50px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+  }
+
+  .AboutMe-ExperienceContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1px;
+  }
+
+
+  .WebDev-Description {
+    padding: 0 !important;
+  }
+
+
+  .Graphics-Description {
+    padding: 0 !important; 
+  }
+
+  .WebDev-Experience .Experience {
+    flex-direction: column;
+  }
+
+
+  .WebDev-Section {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+
+  .GrapicsDesign-Section {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem; 
+  }
+
+
+  .ExperienceSection-Container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .Graphics-Experience .Experience {
+    flex-direction: column;
+  }
+
+  .Contact-Container {
+    width: 100%;
+    border-radius: 3rem;
+  }
+
+  .Nav-links-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .Nav-links-bottom :hover {
+    color: rgb(131, 130, 130);
+    transition: 0s;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

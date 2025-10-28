@@ -521,7 +521,7 @@ nav {
 
 /* Mobile Design Code */
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   .Main-Container {
     align-items: center;
     width: 200%;

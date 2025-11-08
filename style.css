@@ -14,22 +14,23 @@ html {
 
 body {
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 2rem;
-  padding-left: 10rem;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 .Main-Container {
-  width: 600%;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: white;
-  padding-right: 5rem;
-  font-family: "Outfit";
+  padding: 2rem 1rem;
 }
 
 .Name {
@@ -40,6 +41,7 @@ body {
 
 .nav-link i {
   display: none;
+  font-size: 1.4rem;
 }
 
 header {
@@ -47,44 +49,68 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 40px;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 20px;
-  gap: 5rem;
-  position: sticky;
-  top: 0;
+  gap: 1rem;
+}
+
+.Nav-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
 }
 
 .Nav-links a {
-  margin: 15px;
+  margin: 0 6px;
   text-decoration: none;
   color: black;
-  font-size: 30px;
+  font-size: 1.05rem;
+  padding: 6px 8px;
+}
+
+/* mobile nav open state */
+.Nav-links.open {
+  display: flex;
+  position: absolute;
+  top: 72px;
+  right: 1rem;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 0.75rem 1rem;
+  flex-direction: column;
+  border-radius: 8px;
+  z-index: 40;
 }
 
 .Profile-Container {
   display: flex;
-  gap: 15rem;
+  gap: 2.5rem;
   align-items: center;
-  padding: 80px 30px;
+  justify-content: center;
+  padding: 3rem 0;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .Profile-image img {
-  width: 180%;
-  border-radius: 100%;
-  border: 1px solid black;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #111;
 }
 
 .Bio {
   text-align: center;
-  margin-top: 20px;
+  flex-direction: column;
+  margin-top: 0;
 }
 
 .greeting {
@@ -170,17 +196,25 @@ nav {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+
+.About-Content {
+  width: 200%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .About-Cotainer img {
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2rem;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 1rem;
+  object-fit: cover;
 }
 
 .AboutMe-ExperienceContainer {
@@ -192,6 +226,17 @@ nav {
   gap: 2rem;
   margin-top: 5rem;
 }
+
+
+.Experience-Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
 
 .AboutMe-ExperienceContainer p {
   width: 100%;
@@ -270,6 +315,7 @@ nav {
   margin-bottom: 5rem;
 }
 
+
 .ExperienceSection-Container {
   display: flex;
   align-items: center;
@@ -301,6 +347,36 @@ nav {
   gap: 2rem;
 }
 
+/* Make inner Experience items stack inside the Experience cards on narrower screens
+   so icons and labels don't overflow their containers. */
+@media (max-width: 1024px) {
+  .WebDev-Experience .Experience,
+  .Graphics-Experience .Experience {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .WebDev-Experience .Experience i,
+  .Graphics-Experience .Experience i {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .WebDev-Experience .Experience section,
+  .Graphics-Experience .Experience section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .WebDev-Experience .Experience p,
+  .Graphics-Experience .Experience p {
+    margin-top: 6px;
+    color: rgb(104, 103, 103);
+  }
+}
+
 .Html {
   display: flex;
   flex-direction: column;
@@ -322,7 +398,7 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2.5rem;
+  padding: 1.5rem;
   border: 1px solid rgb(53, 52, 52);
   border-radius: 2rem;
   margin-bottom: 5rem;
@@ -347,11 +423,10 @@ nav {
 }
 
 .Project-Container-one {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
 }
 
 .Project-one {
@@ -360,7 +435,7 @@ nav {
   flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  padding: 1rem;
+  padding: 2rem;
   border: 2px solid black;
   border-radius: 2rem;
   background-color: rgb(247, 247, 247);
@@ -368,12 +443,13 @@ nav {
 
 .Project-one img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 1rem;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
 }
 
 .Project-one h2 {
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 2rem;
 }
 
@@ -423,37 +499,109 @@ nav {
 }
 
 .Project-Container-two {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 4rem;
 }
 
+
+.Card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: rgb(247, 247, 247);
+}
+
+
+.Card img {
+  width: 90%;
+  border-radius: 1rem;
+}
+
+
+.Card h2 {
+  font-size: 25px;
+  margin-top: 1rem;
+}
+
+
+.Flyer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: rgb(247, 247, 247);
+}
+
+
+.Flyer img {
+  width: 90%;
+  border-radius: 1rem;
+}
+
+
+.Flyer h2 {
+  font-size: 25px;
+  margin-top: 1rem;
+}
+
+
+.Poster {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: rgb(247, 247, 247);
+}
+
+
+.Poster img {
+  width: 90%;
+  border-radius: 1rem;
+}
+
+
+.Poster h2 {
+  font-size: 25px;
+  margin-top: 1rem;
+}
+
+
 .Contact-Section {
-  margin-top: 15rem;
+  margin-top: 20rem;
   text-align: center;
 }
 
-.Contact-Section small {
-  font-size: 15px;
-}
-
-.Contact-Section h1 {
-  font-size: 50px;
-}
 
 .Contact-Container {
-  width: 25%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-top: 3rem;
-  padding: 1.5rem;
-  border: 2px solid rgb(155, 154, 154);
-  border-radius: 2rem;
+  padding: 1rem;
+  border: 2px solid rgb(200, 199, 199);
+  border-radius: 1rem;
+  flex-wrap: wrap;
 }
 
 .Contact-Container i {
@@ -473,13 +621,12 @@ nav {
 
 .Nav-links-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  gap: 2rem;
-  position: sticky;
-  top: 0;
-  margin-top: 10rem;
+  padding: 12px 0;
+  gap: 1rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
 }
 
 .Nav-links-bottom a {
@@ -490,9 +637,35 @@ nav {
 }
 
 .Copyright-reserved {
-  font-size: 15px;
-  margin-bottom: 10rem;
+  font-size: 14px;
+  margin: 3rem 0 6rem 0;
   color: rgb(104, 103, 103);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .Project-Container-one, .Project-Container-two { grid-template-columns: repeat(2, 1fr); }
+  .Profile-image img { width: 200px; height: 200px; }
+}
+
+@media (max-width: 768px) {
+  .Nav-links { display: none; }
+  .nav-link i { display: block; }
+  header { align-items: center; }
+  .Profile-Container { flex-direction: column; gap: 1rem; padding: 1.5rem 0; }
+  .Bio { text-align: center; }
+  .About-Cotainer { flex-direction: column; align-items: center; }
+  .Project-Container-one, .Project-Container-two { grid-template-columns: 1fr; }
+  .Contact-Container { width: 100%; }
+}
+
+@media (max-width: 460px) {
+  .Main-Container { width: 95%; }
+  .Name { font-size: 1.2rem; }
+  .Nav-links.open { right: 0.5rem; }
+  .Bio h1 { font-size: 1.6rem; }
+  .AboutMe-section h1, .Experience-Section h1, .Project-Section h1 { font-size: 1.8rem; }
+  .Nav-links a { font-size: 0.95rem; }
 }
 
 
@@ -519,153 +692,144 @@ nav {
 
 
 
-/* Mobile Design Code */
-
-@media (max-width: 460px) {
+/* Mobile / small-screen corrections to prevent horizontal overflow and provide a clean hamburger menu */
+@media (max-width: 480px) {
+  /* ensure container fits viewport */
   .Main-Container {
-    align-items: center;
-    width: 200%;
+    width: 95%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
-  .Name {
-    font-size: 30px;
-    font-weight: 500;
-    font-family: "Montserrat";
-  }
+  /* show hamburger, prepare animated mobile dropdown nav */
+  .nav-link i { display: block; transition: transform 180ms ease; }
 
-  .Name i {
-    display: flex;
-  }
-
-  
-  .nav-link i {
-    display: flex;
-  }
-
+  /* keep the nav in the DOM so it can animate; hide it visually until opened */
   .Nav-links {
-    display: none;
+    display: flex;
+    position: fixed;
+    top: 64px;
+    right: 0.5rem;
+    left: 0.5rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transform-origin: top right;
+    transform: translateY(-6px) scale(0.98);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms cubic-bezier(.2,.9,.2,1), transform 220ms cubic-bezier(.2,.9,.2,1);
   }
+
+  header { gap: 0.5rem; }
 
   .Profile-Container {
     display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    padding: 30px;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
   }
 
   .Profile-image img {
-    width: 100%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
   }
 
-  .Bio {
-    text-align: center;
-    margin-top: 1px;
-  }
+  .Bio { text-align: center; }
 
-  .btn-outline {
-    padding: 20px;
-    border-radius: 35px;
-  }
+  .btn-outline, .btn-filled { padding: 10px 14px; font-size: 0.95rem; }
 
-  .btn-filled {
-    padding: 25px;
-    border-radius: 35px;
-  }
+  .About-Cotainer { flex-direction: column; gap: 1rem; }
+  .About-Content { flex-direction: column;}
+  .About-Content img { width: 40%; max-width: 340px; margin-left: 2.2rem;}
+  .AboutMe-ExperienceContainer { max-width: 340px;}
 
-  .About-Cotainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-  }
-
-  .About-Cotainer img {
-    width: 60%;
-  }
-
-  .AboutMe-section h1 {
-    font-size: 50px;
-    margin-top: 5px;
-    margin-bottom: 1px;
-  }
-
-  .AboutMe-ExperienceContainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1px;
-  }
-
-
-  .WebDev-Description {
-    padding: 0 !important;
-  }
-
-
-  .Graphics-Description {
-    padding: 0 !important; 
-  }
-
-  .WebDev-Experience .Experience {
-    flex-direction: column;
-  }
-
-
+  .AboutMe-section h1, .Experience-Section h1, .Project-Section h1 { font-size: 1.6rem; }
   .WebDev-Section {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    width: 60%;
+    margin-left: 1rem;
   }
-
 
   .GrapicsDesign-Section {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem; 
+    width: 60%;
+    margin-left: 1rem; 
   }
 
+  /* Projects stack in a single column on small screens */
+  .Project-Container-one, .Project-Container-two { grid-template-columns: 1fr; }
 
+  .Project-Container-one { align-items: center; justify-content: center;}
+  .Project-one img { height: 140px; }
+  .Project-Container-one h2 { font-size: 24px;}
+  .Project-one a {font-size: 13.5px;}
+  
+
+  .Contact-Container { width: 100%; padding: 0.75rem; }
+  /* Experience cards: reduce width and padding to avoid overflow on very small screens */
   .ExperienceSection-Container {
     width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    gap: 1rem;
   }
 
-  .Graphics-Experience .Experience {
-    flex-direction: column;
-  }
+  .Experience-Container { flex-direction: column; max-width: 380px;}
 
-  .Contact-Container {
+  .WebDev-Experience,
+  .Graphics-Experience {
     width: 100%;
-    border-radius: 3rem;
+    max-width: 560px; /* limit card width so it never overflows */
+    margin: 0 auto;
+    padding: 3rem; /* reduced padding for small screens */
+    box-sizing: border-box;
   }
 
-  .Nav-links-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .WebDev-Experience h2, .Graphics-Experience h2 { font-size: 1.15rem; }
+
+  /* mobile dropdown nav appearance */
+  .Nav-links.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .Nav-links.open a { padding: 0.6rem 0.8rem; font-size: 1rem; }
+
+  /* avoid any accidental overflow */
+  html, body { overflow-x: hidden; }
+}
+
+/* Stack experience cards for narrower screens */
+@media (max-width: 1024px) {
+  .ExperienceSection-Container {
     flex-direction: column;
-    gap: 3px;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 0 0.5rem;
   }
 
-  .Nav-links-bottom :hover {
-    color: rgb(131, 130, 130);
-    transition: 0s;
-    text-decoration: underline;
-    cursor: pointer;
+  .WebDev-Experience, .Graphics-Experience {
+    width: 100%;
+    margin: 0;
   }
+
+
+  .Contact-Container i {
+    font-size: 25px;
+  }
+
+  
+  .Nav-links-bottom {
+    flex-direction: column;
+  }
+}
+
+/* Small-screen extras: animate hamburger icon when menu opens */
+@media (max-width: 480px) {
+  .nav-link.open i { transform: rotate(90deg) scale(1.05); }
 }
